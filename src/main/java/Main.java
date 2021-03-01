@@ -2,11 +2,8 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-
-        System.out.println(new MathFunction().arcsinInRow(-0.866));
-        System.out.println(Math.asin(-0.866));
-        System.out.println(new MathFunction().arcsinInRow(0.866));
-        System.out.println(Math.asin(0.866));
-
+        MathFunction mathFunction = new MathFunction();
+        System.out.println(mathFunction.arcsinInRow(1.1));
+        System.out.println(Math.asin(1.1));
     }
 }

@@ -7,9 +7,15 @@ public class MathFunctionTest {
     private MathFunction mathFunction = new MathFunction();
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/data.csv", numLinesToSkip = 1)
-    public void testArcsin(double input, double expected){
-        Assertions.assertEquals(expected, Math.ceil(mathFunction.arcsinInRow(input) * 1000) / 1000);
+    @CsvFileSource(resources = "/rightData.csv", numLinesToSkip = 1)
+    public void testArcsinRightData(double input, double expected){
+        Assertions.assertEquals(expected, Math.round(mathFunction.arcsinInRow(input) * 1000.0) / 1000.0);
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/badData.csv", numLinesToSkip = 1)
+    public void testArcsinBadData(double input, double expected){
+
     }
 
 }
