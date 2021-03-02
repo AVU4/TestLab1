@@ -1,22 +1,30 @@
 package classes;
 
+import lombok.Getter;
+
 import java.util.Objects;
 
+@Getter
 public class Action {
 
-    private String nameProcess;
-    boolean isFinished;
+    private String name;
+    private String newCondition;
+    private String resolveCondition;
+    private Entity target;
 
-    public Action(String nameProcess){
-        this.nameProcess = nameProcess;
-        this.isFinished = false;
+    public Action(String name) {
+        this.name = name;
     }
 
-    public String getNameProcess() {
-        return nameProcess;
+    public Action(String name, String newCondition, Entity target){
+        this(name);
+        this.newCondition = newCondition;
+        this.target = target;
     }
 
-    public void setNameProcess(String nameProcess) {
-        this.nameProcess = nameProcess;
+    public Action(String name, String newCondition, String resolveCondition, Entity target){
+        this(name, newCondition, target);
+        this.resolveCondition = resolveCondition;
     }
+
 }
